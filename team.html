@@ -50,14 +50,13 @@ body, html {
 <div class="w3-top">
   <ul class="w3-navbar w3-white w3-card-2" id="myNavbar">
     <li>
-      <a href="#home" class="w3-wide">DuoFilms</a>
+      <a href="index.html#home" class="w3-wide">DuoFilms</a>
     </li>
     <!-- Right-sided navbar links -->
     <li class="w3-right w3-hide-small">
-      <a href="#about">WHO</a>
-	  <a href="#what">WHAT</a>
-	  <a href = "#why"> WHY</a>
-      <a href="team.html"> TEAM</a>
+      <a href="index.html#about">WHO</a>
+	  <a href="index.html#what">WHAT</a>
+	  <a href = "index.html#why"> WHY</a>
       <a href="knowledge.html">LEARN</a>
 	<a href="test.html">TEST</a>
       
@@ -85,62 +84,7 @@ body, html {
   
 </nav>
 
-<!-- Header with full-height image -->
-<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
-  <div class="w3-display-left w3-padding-xxlarge w3-text-white">
-    <span class="w3-jumbo w3-hide-small">Lets roll that film</span><br>
-    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Start something that matters</span><br>
-    <span class="w3-large">Stop wasting time and start learning.</span>
-    <p><a href="knowledge.html" class="w3-btn w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn now!</a></p>
-  </div>   
-</header>
-
-<div class="w3-container w3-padding-128" id="about">
-	<h1><center>DUO FILMS</center> </h1>
-	<p> <center>Welcome to DUO FILMS. We have tutorial videos, articles, and images to help you understand and pass your Film Studies Class. DuoFilms is comprised of elite members of Bayside High School which give this website an edge over other film study websites. DuoFilms has wanted to give back to the community of filmmaking which has inspired the masses for over 100 years. </center> </p>
-	</div>
-
-	<header class="bgimg-2 w3-display-container w3-grayscale-min" id="home">
-  <div class="w3-display-left w3-padding-xxlarge w3-text-white">
-    <span class="w3-jumbo w3-hide-small"></span><br>
-    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Start something that matters</span><br>
-    <span class="w3-large"></span>
-    </div>   
-</header>
-	
-	<div class="w3-container w3-padding-128" id = "what">
-	<h1><center>What would you learn?</center> </h1>
-	<p> <center>Our objective here at DuoFilms is to provide the learner with information. Film Studies is the study of the production, aesthetics and history of the 20th century’s
-most important visual medium—the cinema. As storytelling device, as historical
-document, as expression of imagination, as artistic object, there is no form more capable
-of capturing our interest and provoking the senses. The cinema can create worlds of
-magic, fantasy and romance just as easily as it can expose the dim reality of actuallylived
-life. You will be learning how something as simple as angle and shots can make or break a scene.</center> </p>
-	</div>
-	
-	<header class="bgimg-3 w3-display-container w3-grayscale-min" id="home">
-  <div class="w3-display-left w3-padding-xxlarge w3-text-white">
-    <span class="w3-jumbo w3-hide-small"></span><br>
-    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Start something that matters</span><br>
-    <span class="w3-large"></span>
-    </div>   
-</header>
-	<div class="w3-container w3-padding-128" id="why">
-	<h1><center>Why learn this?</center> </h1>
-	<p> <center>Today film studies exists worldwide as a discipline with specific schools dedicated to it. The aspects of film studies have grown to encompass numerous methods for teaching history, culture and society. Many liberal arts colleges and universities and contain courses specifically geared toward the analysis of film. Also exemplifying the increased diversity of film studies is the fact that high schools across the United States offer classes on film theory. Now this all may seem complicated but in truth Film Study is a way to comunicate on a deeper level with films and people. When someone understands all the little tricks and everything that goes into a film they appreciate it more and thats what we want for the average person to not only realize what goes into films to also appreciate it.</center> </p>
-	</div>
-	
-	<header class="bgimg-4 w3-display-container w3-grayscale-min" id="home">
-  <div class="w3-display-left w3-padding-xxlarge w3-text-white">
-    <span class="w3-jumbo w3-hide-small"></span><br>
-    <span class="w3-xxlarge w3-hide-large w3-hide-medium"></span><br>
-    <span class="w3-large"></span>
-    <p><a href="knowledge.html" class="w3-btn w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn now!</a></p>
-  </div>   
-</header>
-	
-<!--
-<!-- About Section
+<!-- About Section -->
 <div class="w3-container w3-padding-128" id="about">
   <h3 class="w3-center">Our Reasons</h3>
   <p class="w3-center w3-large">Key features of our company</p>
@@ -169,7 +113,7 @@ life. You will be learning how something as simple as angle and shots can make o
 </div>
 
 
-<!-- Team Section 
+<!-- Team Section -->
 <div class="w3-container w3-padding-128" id="team">
   <h3 class="w3-center">THE TEAM</h3>
   <p class="w3-center w3-large">The ones who runs this company</p>
@@ -228,57 +172,6 @@ life. You will be learning how something as simple as angle and shots can make o
   
   
 </footer>
--->
-<script>
-<!-- Google Map Location -->
-var myCenter = new google.maps.LatLng(41.878114, -87.629798);
-
-function initialize() {
-var mapProp = {
-  center: myCenter,
-  zoom: 12,
-  scrollwheel: false,
-  draggable: false,
-  mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
-
-var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-var marker = new google.maps.Marker({
-  position: myCenter,
-});
-
-marker.setMap(map);
-}
-
-google.maps.event.addDomListener(window, 'load', initialize);
-
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
-
-
-// Toggle between showing and hiding the sidenav when clicking the menu icon
-var mySidenav = document.getElementById("mySidenav");
-
-function w3_open() {
-    if (mySidenav.style.display === 'block') {
-        mySidenav.style.display = 'none';
-    } else {
-        mySidenav.style.display = 'block';
-    }
-}
-
-// Close the sidenav with the close button
-function w3_close() {
-    mySidenav.style.display = "none";
-}
-</script>
-
 
 
 </body></html>
