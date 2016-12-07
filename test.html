@@ -82,14 +82,14 @@ body, html {
   <script id="myTemplate" type="text/template" padding-top:200px>
               <div class="item">
                     <div class="panel panel-default">
-                      <div class="panel-heading">{{question}}</div>
+                      <div class="panel-heading">{{data.question}}</div>
                       <div class="panel-body">
-                            <div>A) {{A}}</div>
-							<div>B) {{B}}</div>
-							<div>C) {{C}}</div>
-							<div>D) {{D}}</div>
-							<input type="text" id=userAnswer" placeholder="Answer">
-							<button onclick="checker()">Check Answer</button>
+                            <div>A) {{data.A}}</div>
+							<div>B) {{data.B}}</div>
+							<div>C) {{data.C}}</div>
+							<div>D) {{data.D}}</div>
+							<input type="text" id="userAnswer" placeholder="Answer">
+							<button onclick="checker('{{questionkey}}')">Check Answer</button>
                       </div>
                     </div>
               </div>
@@ -98,8 +98,8 @@ body, html {
    <script>
    var answer = $("#answer").val(); 
    var userAnswer = "";
-   function checker(){
-		if (userAnswer =  answer) {
+   function checker(key){
+		if (userAnswer =  data[key].answer) {
 			window.alert("correct!");
     } else {
         window.alert("Wrong. Sorry.");
@@ -124,7 +124,8 @@ body, html {
 		   build="";
                data = snapshot.val();
                for(key in data){
-                    build += Mustache.render(myTemplate,data[key]);
+                    build += Mustache.render(myTemplate,{questionkey:key,   data:data[key]});
+					console.log({questionkey:key,   data:data[key]});
                 }
 				$("#output").html(build);
            })
@@ -134,9 +135,11 @@ body, html {
 	  
 </head>
 <body>
-<div class="container" id="output">
+<div class="container" id="output" style="
+    padding-bottom: 0px;
+    padding-top: 75px;
+">
 
-</div>
 
 </body>
 </html>
