@@ -90,16 +90,18 @@ body, html {
 							<div>D) {{data.D}}</div>
 							<input type="text" id="userAnswer" placeholder="Answer">
 							<button onclick="checker('{{questionkey}}')">Check Answer</button>
+							
                       </div>
                     </div>
               </div>
 			
     </script>  
-   <script>
-   var answer = $("#answer").val(); 
-   var userAnswer = "";
+   <script> 
    function checker(key){
-		if (userAnswer =  data[key].answer) {
+   console.log(userAnswer, data[key].answer)
+   var x = document.getElementById("userAnswer").value;
+   console.log(x);
+   if (x ==  data[key].answer) {
 			window.alert("correct!");
     } else {
         window.alert("Wrong. Sorry.");
