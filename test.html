@@ -88,8 +88,8 @@ body, html {
 							<div>B) {{data.B}}</div>
 							<div>C) {{data.C}}</div>
 							<div>D) {{data.D}}</div>
-							<input type="text" id="userAnswer" placeholder="A, B, C, or D?" style="text-transform: lowercase;" maxlength="1">
-							<button onclick="checker('{{questionkey}}')">Check Answer</button>
+							<input type="text" id="{{questionkey}}" placeholder="A, B, C, or D?" style="text-transform: lowercase;" maxlength="1">
+							<button onclick="checker('{{questionkey}}'); grader();">Check Answer</button>
 							
                       </div>
                     </div>
@@ -100,8 +100,8 @@ body, html {
    
    
    function checker(key){
-   console.log(userAnswer, data[key].answer)
-   var x = document.getElementById("userAnswer").value;
+   console.log(data[key].answer);
+	var x = document.getElementById(key).value;
    console.log(x);
    if (x ==  data[key].answer) {
 			window.alert("correct!");
@@ -110,7 +110,21 @@ body, html {
     }
 }
 
-   
+
+ function grader(){
+	 var grade = 100;
+	 var x = document.getElementById(key).value;
+	 if (x == data[key].answer) {
+		grade = grade + 10;
+			window.alert(" Yay! Your grade is now : " + grade);
+	} 	
+		else { 
+			grade = grade - 10;
+			window.alert(" sorry your grade is now : " + grade);
+	}
+
+	}
+  
 </script>   
     
     <script>
