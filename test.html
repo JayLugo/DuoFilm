@@ -89,7 +89,7 @@ body, html {
 							<div>C) {{data.C}}</div>
 							<div>D) {{data.D}}</div>
 							<input type="text" id="{{questionkey}}" placeholder="A, B, C, or D?" style="text-transform: lowercase;" maxlength="1">
-							<button onclick="checker('{{questionkey}}');">Check Answer</button>
+							<button onclick="checker('{{questionkey}}'); grader();">Check Answer</button>
 							
                       </div>
                     </div>
@@ -99,32 +99,45 @@ body, html {
    <script> 
    
    
-   function checker(key){
-   console.log(data[key].answer);
-	var x = document.getElementById(key).value;
-   console.log(x);
-   if (x ==  data[key].answer) {
-			window.alert("correct!");
-    } else {
-        window.alert("Wrong. Sorry.");
-    }
-}
-
-
- function grader(){
-	 var grade = 100;
-	 var x = document.getElementById(key).value;
-	 if (x == data[key].answer) {
-		grade = grade + 10;
-			window.alert(" Yay! Your grade is now : " + grade);
-	} 	
-		else { 
-			grade = grade - 10;
-			window.alert(" sorry your grade is now : " + grade);
-	}
-
-	}
-  
+   	var countercorrect = 0;
+			var counterincorrect = 0;
+			var totalquestions;
+				function checker(key){
+					console.log(data[key].answer);
+					var x = document.getElementById(key).value;
+					console.log(" Your answer was: " + x);
+					
+					
+					
+					
+					
+					if (x == data[key].answer) {
+						window.alert("correct!");
+						countercorrect = countercorrect + 1;
+						console.log("Current correct amount:" + countercorrect);
+						console.log("Current incorrect amount:" + counterincorrect);
+			
+					} else {
+						window.alert("Wrong. Sorry.");
+						counterincorrect = counterincorrect + 1;
+						console.log("Current correct amount:" + countercorrect);
+						console.log("Current incorrect amount:" + counterincorrect);
+					}
+					totalquestions = 0;
+					for(key in data){
+						totalquestions = totalquestions + 1;
+					}
+				}
+		
+			</script>
+			
+			<script>
+			
+			function grader(){
+				var countertotal = countercorrect + counterincorrect;
+				window.alert("You got " + countercorrect + " out of " + totalquestions);
+			}
+			
 </script>   
     
     <script>
@@ -150,15 +163,17 @@ body, html {
 		   
     
     </script>
-	  
-</head>
 <body>
 <div class="container" id="output" style="
     padding-bottom: 0px;
     padding-top: 75px;
 ">
+</div>
 
 
 </body>
+
+
+
 </html>
 
